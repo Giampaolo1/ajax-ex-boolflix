@@ -13,13 +13,14 @@ $(document).ready(function() {
   // l utente digiterà qualcosa sulla searchbar
 
   // Ci salviano il valore dell input inserito dall utente
-  var ricercaUtente = $(".message").val();
+  // $(".bottoneVai").click(function(){
+  var ricercaUtente = $(".barraRicerca").val();
   console.log(ricercaUtente);
 
 
 
   // al click del bottone parte la chiamata ajax x la ricerca
-  $(".bottoneVai").click(function(){
+  // $(".bottoneVai").click(function(){
     // chiama l api
     // e chiedigli se trova dei risultati
 
