@@ -29,11 +29,12 @@ $(document).ready(function() {
 
       // &query= a quello entrato nella searchbar
       // completiamo la url di chiamata con i parametri passati
-      data: {
-      query: dataref.barraRicerca()
-      },
-      success: function(data){
 
+      data: {
+      query: ().barraRicerca()
+      },
+
+      success: function(data){
         console.log(data)
       // Ora bisogna attraversare i risultati e chiedergli di restituirmi solo quello che ha scritto l utente
       // if e for quale prima? come?
