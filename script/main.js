@@ -13,9 +13,10 @@ $(document).ready(function() {
   // l utente digiterà qualcosa sulla searchbar
 
   // Ci salviano il valore dell input inserito dall utente
-  // $(".bottoneVai").click(function(){
-  var ricercaUtente = $(".barraRicerca").val();
-  console.log(ricercaUtente);
+  $(".bottoneVai").click(function(){
+    var ricercaUtente = $(".barraRicerca").val();
+    console.log(ricercaUtente);
+  )};
 
 
 
