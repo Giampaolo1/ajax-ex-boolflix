@@ -16,7 +16,7 @@ $(document).ready(function() {
   $(".bottoneVai").click(function(){
     var ricercaUtente = $(".barraRicerca").val();
     console.log(ricercaUtente);
-  )};
+  });
 
 
 
