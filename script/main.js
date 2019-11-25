@@ -16,13 +16,20 @@ $(document).ready(function() {
   $(".bottoneVai").click(function(){
     var ricercaUtente = $(".barraRicerca").val();
     console.log(ricercaUtente);
+
+    // al click del bottone parte la chiamata ajax x la ricerca
+    // Interroghiamo la API per farci ritornare il match con quello scritto dall utente
+
+    // $.ajax({
+    //   url:"https://api.themoviedb.org/3/movie/550?api_key=68d4888fdac250927f94dcdbf7553096",
+    //   method: "GET",
+    //   success: function(data){
+    //     $("").html(data);
+    //     console.log(data)
+    //     },
+    
   });
 
 
-
-  // al click del bottone parte la chiamata ajax x la ricerca
-  // $(".bottoneVai").click(function(){
-    // chiama l api
-    // e chiedigli se trova dei risultati
 
 });
