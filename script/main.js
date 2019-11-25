@@ -37,11 +37,11 @@ $(document).ready(function() {
         query: ricerca
       },
 
+      // Vogliamo dopo la risposta dell’API
+      // visualizzare a schermo i seguenti valori per ogni film trovato.
+
       success: function(data){
         console.log(data)
-      // Ora bisogna attraversare i risultati e chiedergli di restituirmi solo quello che ha scritto l utente
-      // if e for quale prima? come?
-      // la chiamata restituisce solo 1 risultato!!!
     },
       error: function(){
         console.log("There is an error");
