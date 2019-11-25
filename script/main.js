@@ -19,13 +19,17 @@ $(document).ready(function() {
 
     // al click del bottone parte la chiamata ajax x la ricerca
 
+// API KEY: 68d4888fdac250927f94dcdbf7553096
+
+
     $.ajax({
-      url:"https://api.themoviedb.org/3/movie/550?api_key=68d4888fdac250927f94dcdbf7553096",
+      url:"",
       method: "GET",
       success: function(data){
         console.log(data)
       // Ora bisogna attraversare i risultati e chiedergli di restituirmi solo quello che ha scritto l utente
       // if e for quale prima? come?
+      // la chiamata restituisce solo 1 risultato!!!
     },
       error: function(){
         console.log("There is an error");
