@@ -24,14 +24,15 @@ $(document).ready(function() {
 
     $.ajax({
       // metto parte dell url
-      url:"https://api.themoviedb.org/3/search/movie?api_key=68d4888fdac250927f94dcdbf7553096&query=fight",
+      url:"https://api.themoviedb.org/3/search/movie?api_key=68d4888fdac250927f94dcdbf7553096&query=",
       method: "GET",
 
       // &query= a quello entrato nella searchbar
       // completiamo la url di chiamata con i parametri passati
+      var ricerca = $(".barraRicerca").val
 
       data: {
-      query: ().barraRicerca()
+      query: ricerca.barraRicerca()
       },
 
       success: function(data){
