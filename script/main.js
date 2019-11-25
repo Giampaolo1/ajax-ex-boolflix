@@ -21,18 +21,20 @@ $(document).ready(function() {
 
 // API KEY: 68d4888fdac250927f94dcdbf7553096
 
+    var ricerca = $(".barraRicerca").val();
+
 
     $.ajax({
       // metto parte dell url
-      url:"https://api.themoviedb.org/3/search/movie?api_key=68d4888fdac250927f94dcdbf7553096&query=",
+      url:"https://api.themoviedb.org/3/search/movie",
       method: "GET",
 
       // &query= a quello entrato nella searchbar
       // completiamo la url di chiamata con i parametri passati
-      var ricerca = $(".barraRicerca").val
 
       data: {
-      query: ricerca.barraRicerca()
+        api_key: "68d4888fdac250927f94dcdbf7553096",
+        query: ricerca
       },
 
       success: function(data){
