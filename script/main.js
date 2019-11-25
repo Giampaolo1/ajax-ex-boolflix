@@ -23,15 +23,17 @@ $(document).ready(function() {
 
 
     $.ajax({
+      // metto parte dell url
       url:"https://api.themoviedb.org/3/search/movie?api_key=68d4888fdac250927f94dcdbf7553096&query=fight",
       method: "GET",
+
+      // &query= a quello entrato nella searchbar
+      // completiamo la url di chiamata con i parametri passati
+      data: {
+      query: dataref.barraRicerca()
+      },
       success: function(data){
-        // &query= a quello entrato nella searchbar
-        // completiamo la url di chiamata con i parametri passati
-        data: {
-                year: dataref.year(),
-                month:   dataref.month()
-        },
+
         console.log(data)
       // Ora bisogna attraversare i risultati e chiedergli di restituirmi solo quello che ha scritto l utente
       // if e for quale prima? come?
