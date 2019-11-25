@@ -40,8 +40,32 @@ $(document).ready(function() {
       // Vogliamo dopo la risposta dell’API
       // visualizzare a schermo i seguenti valori per ogni film trovato.
 
+      // results: Array
+      // 1.title 2.original_title 3.original_language 4.vote_average
+
+
       success: function(data){
         console.log(data)
+        for (var i = 0; i < data.results.length; i++) {
+          // USA CICLO FOR..IN X CICLARE L ARRAY
+          var oggetto = data.response[i];
+
+          // console.log(i + " " + data.results[i].title);
+          // console.log(oggetto.title);
+
+          // console.log(data.results[i].original_title);
+          // console.log(oggetto.original_title);
+
+          // console.log(data.results[i].original_language);
+          // console.log(oggetto.original_language);
+
+          // console.log(data.results[i].vote_average);
+          // console.log(oggetto.vote_average);
+
+          // console.log("-------");
+        }
+
+        // USA CICLO FOR..IN X CICLARE L ARRAY
     },
       error: function(){
         console.log("There is an error");
