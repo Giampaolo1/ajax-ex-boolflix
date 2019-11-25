@@ -1,3 +1,6 @@
 $(document).ready(function() {
-	//Code
+
+  // al click del bottone parte la chiamata ajax x la ricerca
+  $(".bottoneVai").click(function(event){
+
 });

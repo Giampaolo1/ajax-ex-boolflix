@@ -10,3 +10,11 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+/* searchbar principale */
+.barraRicerca {
+  border: solid 1px;
+}
+
+/* bottone vai */
+.bottoneVai {}
