@@ -47,8 +47,16 @@ $(document).ready(function() {
       success: function(data){
         console.log(data)
         for (var i = 0; i < data.results.length; i++) {
-          // USA CICLO FOR..IN X CICLARE L ARRAY
-          var oggetto = data.response[i];
+          var oggetto = data.results[i];
+
+          // USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
+
+          var x;
+          for (x in oggetto) {
+            console.log(x + " : " + oggetto[x]);
+          }
+          console.log("---------");
+
 
           // console.log(i + " " + data.results[i].title);
           // console.log(oggetto.title);
@@ -65,7 +73,6 @@ $(document).ready(function() {
           // console.log("-------");
         }
 
-        // USA CICLO FOR..IN X CICLARE L ARRAY
     },
       error: function(){
         console.log("There is an error");
