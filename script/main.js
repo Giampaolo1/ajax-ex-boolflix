@@ -14,8 +14,15 @@ $(document).ready(function() {
 
   // Ci salviano il valore dell input inserito dall utente
   $(".bottoneVai").click(function(){
+
+    // ripulisco la pagina
+    $(".container").html("");
+
     var ricercaUtente = $(".barraRicerca").val();
     console.log(ricercaUtente);
+
+    // ripulisco la barretta
+    // $(".barraRicerca").val("");
 
     // al click del bottone parte la chiamata ajax x la ricerca
 
@@ -46,16 +53,35 @@ $(document).ready(function() {
 
       success: function(data){
         console.log(data)
+
+        // HB
+        var source = $("#entry-template").html();
+        var template = Handlebars.compile(source);
+        // HB
+
+
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
 
+          // HB
+          var context = oggetto;
+          var html = template(context);
+          // HB
+
+          $('.container').append(html)
+
           // USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
 
-          var x;
-          for (x in oggetto) {
-            console.log(x + " : " + oggetto[x]);
-          }
-          console.log("---------");
+          // var x;
+          // for (x in oggetto) {
+          //   console.log(x + " : " + oggetto[x]);
+          // }
+          // console.log("---------");
+
+          // Inserisco nell'html con append
+          // STAMPA IN PAGINA
+          // $('.container').append(oggetto)
+
 
 
           // console.log(i + " " + data.results[i].title);
