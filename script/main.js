@@ -95,9 +95,16 @@ $(document).ready(function() {
           // 4.vote_average
           // Trasformiamo il numero da 1 a 10 decimale in un numero intero da 1 a 5
           console.log(oggetto.vote_average);
-          console.log("--------");
-          var arrotonda = (oggetto.vote_average/2)
+          var arrotonda = (Math.round(oggetto.vote_average/2));
           console.log(arrotonda);
+          console.log("--------");
+
+          // così da permetterci di stampare
+          // a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote
+
+          // append arrotonda to class Stelle
+          // $(".stelle").append(arrotonda);
+
 
 
 
