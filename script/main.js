@@ -55,10 +55,9 @@ $(document).ready(function() {
 
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
-
+          oggetto.stelle = (Math.round(oggetto.vote_average/2));
           // HB API
-          var context = oggetto;
-          var html = template(context);
+          var html = template(oggetto);
 
           // HB API
           $('.container').append(html)
@@ -92,10 +91,9 @@ $(document).ready(function() {
 
           // 4.vote_average
           // Trasformiamo il numero da 1 a 10 decimale in un numero intero da 1 a 5
-          console.log(oggetto.vote_average);
-          var arrotonda = (Math.round(oggetto.vote_average/2));
-          console.log(arrotonda);
-          console.log("--------");
+          // console.log(oggetto.vote_average);
+          // console.log(arrotonda);
+          // console.log("--------");
 
           // così da permetterci di stampare
           // a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote
@@ -105,18 +103,18 @@ $(document).ready(function() {
 
           // Usa HB x appendere:
 
-          var source = $("#entry-template2").html();
-          var template = Handlebars.compile(source);
-
-          // CREO L OGGETTO X HB Stelle
-          var oggetto2 = {myVal: arrotonda};
-
-          // HB STELLE
-          var context2 = oggetto2;
-          var html2 = template(context2);
-
-          // HB STELLE append
-          $('.container').append(html2);
+          // var source = $("#entry-template2").html();
+          // var template = Handlebars.compile(source);
+          //
+          // // CREO L OGGETTO X HB Stelle
+          // var oggetto2 = {myVal: arrotonda};
+          //
+          // // HB STELLE
+          // var context2 = oggetto2;
+          // var html2 = template(context2);
+          //
+          // // HB STELLE append
+          // $('.container').append(html2);
 
           //
           //   // HB API

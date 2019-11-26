@@ -28,20 +28,21 @@
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
   <script id="entry-template" type="text/x-handlebars-template">
-  <div class="entry">
-    <ul>
-      <li class="titolo">Titolo: {{title}}</li>
-      <li class="titoloOriginale">Titolo Originale: {{original_title}}</li>
-      <li class="lingua">Lingua: {{original_language}}</li>
-      <li class="voto">Voto: {{vote_average}}</li>
-    </ul>
-  </div>
+    <div class="entry">
+      <ul>
+        <li class="titolo">Titolo: {{title}}</li>
+        <li class="titoloOriginale">Titolo Originale: {{original_title}}</li>
+        <li class="lingua">Lingua: {{original_language}}</li>
+        <li class="voto">Voto: {{vote_average}}</li>
+        <li class="stelle">Stelle: {{{stelle}}}</li>
+      </ul>
+    </div>
+  </script>
 
-  <script id="entry-template2" type="text/x-handlebars-template">
-    <div class="entry2">
-    <div class="stelle">Stelle:{{MyVal}}</li>
-  </div>
-  </div>
+  <!-- <script id="entry-template2" type="text/x-handlebars-template">
+      <div class="stelle">Stelle:{{MyVal}}
+      </div>
+  </script> -->
 
     <!-- <div class="stars">
       <span><i class="far fa-star star1"></i></span>
@@ -50,7 +51,7 @@
       <span id="star4"><i class="far fa-star"></i></span>
       <span id="star5"><i class="far fa-star"></i></span>
     </div> -->
-</script>
+
 
 
   <!-- CDN Moment JS -->
