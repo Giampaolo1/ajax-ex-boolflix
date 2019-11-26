@@ -55,7 +55,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
-          oggetto.stelle = (Math.round(oggetto.vote_average/2));
+          oggetto.stelle = (Math.round(oggetto.vote_average/2)) + htmlStars;
           // "<ul>
           //     <li>stella</li>
           //   </ul>";
@@ -64,6 +64,15 @@ $(document).ready(function() {
 
           // HB API
           $('.container').append(html);
+
+        var htmlStars = "";
+        for (var x = 1; x <= 5 ; x++) {
+          if (x <= oggetto) {
+            htmlStars = htmlStars + '<i class= "fas fa-star"></i>';
+          } else {
+            htmlStars = htmlStars + '<i class= "far fa-star"></i>';
+          }
+        }
 
           // stampare LE STELLE FIGURE
           // se tu passi un oggetto aggiungerai una proprietà all'oggetto
