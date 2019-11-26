@@ -107,15 +107,16 @@ $(document).ready(function() {
           // Usa HB x appendere:
 
 
-          // CREO L OGGETTO X HB
-          var stelle = {myVal: arrotonda};
+          // CREO L OGGETTO X HB Stelle
+          var oggetto2 = {myVal: arrotonda};
 
           // // HB STELLE
+          var context2 = oggetto2;
+          var html2 = template(context2);
+
+          // // HB STELLE append
           $('.container').append(html2);
 
-          // // HB STELLE
-          var context2 = stelle;
-          var html2 = template(context2);
 
 
 
