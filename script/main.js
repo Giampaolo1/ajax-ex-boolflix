@@ -111,7 +111,7 @@ $(document).ready(function() {
 
           // // HB STELLE
           var html2 = template(stelle);
-          myVal.append(html);
+          myVal.append(html2);
 
 
 
