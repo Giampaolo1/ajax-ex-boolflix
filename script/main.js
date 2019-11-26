@@ -45,7 +45,6 @@ $(document).ready(function() {
       // results: Array
       // 1.title 2.original_title 3.original_language 4.vote_average
 
-
       success: function(data){
         // console.log(data)
 
@@ -55,7 +54,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
-          oggetto.stelle = (Math.round(oggetto.vote_average/2)) + htmlStars;
+          oggetto.stelle = (Math.round(oggetto.vote_average/2)) + " " + htmlStars;
           // "<ul>
           //     <li>stella</li>
           //   </ul>";
@@ -65,125 +64,31 @@ $(document).ready(function() {
           // HB API
           $('.container').append(html);
 
+        }
+
+        var stelline = (Math.round(oggetto.vote_average/2));
         var htmlStars = "";
         for (var x = 1; x <= 5 ; x++) {
-          if (x <= oggetto) {
+          if (x <= stelline) {
             htmlStars = htmlStars + '<i class= "fas fa-star"></i>';
-          } else {
+          }
+          else {
             htmlStars = htmlStars + '<i class= "far fa-star"></i>';
           }
         }
 
-          // stampare LE STELLE FIGURE
-          // se tu passi un oggetto aggiungerai una proprietà all'oggetto
-          // esempio :
-          // oggetto.mioparametro = "<p>ciao</p>";
-          // template(oggetto);
-          // e verrà passato quel parametro con il nome {{mioparametro}}
-          // IDEA:
-          // no perchè concateni il numero all'html.. se vuoi ripetere l'html devi farlo tramite un ciclo prima in una variabile a parte
-          // var html = "";
-          // for(quante volte voglio) {
-          //   html += "<li>stella</li>";
-          // }
-          // oggetto.stelle = html;
 
+        // ripulisco la barra ricerca x una nuova ricerca
+        $(".barraRicerca").val("");
+      },
 
-          // USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
-
-          // var x;
-          // for (x in oggetto) {
-          //   console.log(x + " : " + oggetto[x]);
-          // }
-          // console.log("---------");
-
-          // Inserisco nell'html con append
-          // STAMPA IN PAGINA
-          // $('.container').append(oggetto)
-
-          // console.log(i + " " + data.results[i].title);
-          // console.log(oggetto.title);
-
-          // console.log(data.results[i].original_title);
-          // console.log(oggetto.original_title);
-
-          // console.log(data.results[i].original_language);
-          // console.log(oggetto.original_language);
-
-          // console.log(data.results[i].vote_average);
-          // console.log(oggetto.vote_average);
-
-          // console.log("-------");
-
-          // 4.vote_average
-          // Trasformiamo il numero da 1 a 10 decimale in un numero intero da 1 a 5
-          // console.log(oggetto.vote_average);
-          // console.log(arrotonda);
-          // console.log("--------");
-
-          // così da permetterci di stampare
-          // a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote
-
-          // append arrotonda to class Stelle
-          // $(".stelle").append(arrotonda);
-
-          // Usa HB x appendere:
-
-          // var source = $("#entry-template2").html();
-          // var template = Handlebars.compile(source);
-          //
-          // // CREO L OGGETTO X HB Stelle
-          // var oggetto2 = {myVal: arrotonda};
-          //
-          // // HB STELLE
-          // var context2 = oggetto2;
-          // var html2 = template(context2);
-          //
-          // // HB STELLE append
-          // $('.container').append(html2);
-
-          //
-          //   // HB API
-          //   $('.container').append(html)
-          //
-          //   // HB API
-          //   var context = oggetto;
-          //   var html = template(context);
-
-          // Stampare le STELLE FIGURE
-
-            // var stelleFigure = "";
-            //   for(5) {
-            //     html += "<li>stella</li>";
-            //   }
-            //   oggetto.stelle = html;
-
-
-
-
-
-
-
-
-
-
-        }
-
-      // ripulisco la barra ricerca x una nuova ricerca
-      $(".barraRicerca").val("");
-
-    },
       error: function(){
-        console.log("There is an error");
+        console.log("There is an error with API");
       }
+
     })
 
   });
-
-  // 4.vote_average
-  // Trasformiamo il numero da 1 a 10 decimale in un numero intero da 1 a 5
-
-
 
 });
 
@@ -225,3 +130,88 @@ $(document).ready(function() {
 // $('.content').append(risultato);
 // //.text() per mettere testo e basta => per handlebars è {{}}
 // //.html() per mettere testo assieme ad html => per handlebars è {{{}}}
+
+
+// stampare LE STELLE FIGURE
+// se tu passi un oggetto aggiungerai una proprietà all'oggetto
+// esempio :
+// oggetto.mioparametro = "<p>ciao</p>";
+// template(oggetto);
+// e verrà passato quel parametro con il nome {{mioparametro}}
+// IDEA:
+// no perchè concateni il numero all'html.. se vuoi ripetere l'html devi farlo tramite un ciclo prima in una variabile a parte
+// var html = "";
+// for(quante volte voglio) {
+//   html += "<li>stella</li>";
+// }
+// oggetto.stelle = html;
+
+
+// USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
+
+// var x;
+// for (x in oggetto) {
+//   console.log(x + " : " + oggetto[x]);
+// }
+// console.log("---------");
+
+// Inserisco nell'html con append
+// STAMPA IN PAGINA
+// $('.container').append(oggetto)
+
+// console.log(i + " " + data.results[i].title);
+// console.log(oggetto.title);
+
+// console.log(data.results[i].original_title);
+// console.log(oggetto.original_title);
+
+// console.log(data.results[i].original_language);
+// console.log(oggetto.original_language);
+
+// console.log(data.results[i].vote_average);
+// console.log(oggetto.vote_average);
+
+// console.log("-------");
+
+// 4.vote_average
+// Trasformiamo il numero da 1 a 10 decimale in un numero intero da 1 a 5
+// console.log(oggetto.vote_average);
+// console.log(arrotonda);
+// console.log("--------");
+
+// così da permetterci di stampare
+// a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote
+
+// append arrotonda to class Stelle
+// $(".stelle").append(arrotonda);
+
+// Usa HB x appendere:
+
+// var source = $("#entry-template2").html();
+// var template = Handlebars.compile(source);
+//
+// // CREO L OGGETTO X HB Stelle
+// var oggetto2 = {myVal: arrotonda};
+//
+// // HB STELLE
+// var context2 = oggetto2;
+// var html2 = template(context2);
+//
+// // HB STELLE append
+// $('.container').append(html2);
+
+//
+//   // HB API
+//   $('.container').append(html)
+//
+//   // HB API
+//   var context = oggetto;
+//   var html = template(context);
+
+// Stampare le STELLE FIGURE
+
+  // var stelleFigure = "";
+  //   for(5) {
+  //     html += "<li>stella</li>";
+  //   }
+  //   oggetto.stelle = html;
