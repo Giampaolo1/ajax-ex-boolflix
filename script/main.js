@@ -6,8 +6,6 @@
 // Lingua
 // Voto
 
-
-
 $(document).ready(function() {
 
   // l utente digiterà qualcosa sulla searchbar
@@ -59,11 +57,12 @@ $(document).ready(function() {
           var oggetto = data.results[i];
 
           // HB API
-          $('.container').append(html)
-
-          // HB API
           var context = oggetto;
           var html = template(context);
+
+          // HB API
+          $('.container').append(html)
+
 
           // USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
 
@@ -106,16 +105,27 @@ $(document).ready(function() {
 
           // Usa HB x appendere:
 
+          var source = $("#entry-template2").html();
+          var template = Handlebars.compile(source);
 
           // CREO L OGGETTO X HB Stelle
           var oggetto2 = {myVal: arrotonda};
 
-          // // HB STELLE
+          // HB STELLE
           var context2 = oggetto2;
           var html2 = template(context2);
 
-          // // HB STELLE append
+          // HB STELLE append
           $('.container').append(html2);
+
+          //
+          //   // HB API
+          //   $('.container').append(html)
+          //
+          //   // HB API
+          //   var context = oggetto;
+          //   var html = template(context);
+
 
 
 
