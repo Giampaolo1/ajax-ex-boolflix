@@ -51,20 +51,19 @@ $(document).ready(function() {
       success: function(data){
         // console.log(data)
 
-        // HB
+        // HB API
         var source = $("#entry-template").html();
         var template = Handlebars.compile(source);
-        // HB
 
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
 
+          // HB API
           $('.container').append(html)
 
-          // HB
+          // HB API
           var context = oggetto;
           var html = template(context);
-          // HB
 
           // USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
 
@@ -104,16 +103,20 @@ $(document).ready(function() {
 
           // append arrotonda to class Stelle
           // $(".stelle").append(arrotonda);
+
           // Usa HB x appendere:
-          $('.container').myVal(html2);
 
 
           // CREO L OGGETTO X HB
           var stelle = {myVal: arrotonda};
 
           // // HB STELLE
-          var html2 = template(stelle);
-          myVal.append(html2);
+          $('.container').append(html2);
+
+          // // HB STELLE
+          var context2 = stelle;
+          var html2 = template(context2);
+
 
 
 
