@@ -105,6 +105,8 @@ $(document).ready(function() {
           // append arrotonda to class Stelle
           // $(".stelle").append(arrotonda);
           // Usa HB x appendere:
+          $('.container').myVal(html2);
+
 
           // CREO L OGGETTO X HB
           var stelle = {myVal: arrotonda};
@@ -112,6 +114,8 @@ $(document).ready(function() {
           // // HB STELLE
           var html2 = template(stelle);
           myVal.append(html2);
+
+
 
 
 
