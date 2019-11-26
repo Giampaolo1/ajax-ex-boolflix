@@ -55,10 +55,10 @@ $(document).ready(function() {
 
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
-          oggetto.stelle = (Math.round(oggetto.vote_average/2)) +
-          "<ul>
-              <li>stella</li>
-            </ul>";
+          oggetto.stelle = (Math.round(oggetto.vote_average/2));
+          // "<ul>
+          //     <li>stella</li>
+          //   </ul>";
           // HB API
           var html = template(oggetto);
 
@@ -140,6 +140,14 @@ $(document).ready(function() {
           //   // HB API
           //   var context = oggetto;
           //   var html = template(context);
+
+          // Stampare le STELLE FIGURE
+
+            // var stelleFigure = "";
+            //   for(5) {
+            //     html += "<li>stella</li>";
+            //   }
+            //   oggetto.stelle = html;
 
 
 
