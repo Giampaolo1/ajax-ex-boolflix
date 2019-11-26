@@ -55,12 +55,29 @@ $(document).ready(function() {
 
         for (var i = 0; i < data.results.length; i++) {
           var oggetto = data.results[i];
-          oggetto.stelle = (Math.round(oggetto.vote_average/2));
+          oggetto.stelle = (Math.round(oggetto.vote_average/2)) +
+          "<ul>
+              <li>stella</li>
+            </ul>";
           // HB API
           var html = template(oggetto);
 
           // HB API
-          $('.container').append(html)
+          $('.container').append(html);
+
+          // stampare LE STELLE FIGURE
+          // se tu passi un oggetto aggiungerai una proprietà all'oggetto
+          // esempio :
+          // oggetto.mioparametro = "<p>ciao</p>";
+          // template(oggetto);
+          // e verrà passato quel parametro con il nome {{mioparametro}}
+          // IDEA:
+          // no perchè concateni il numero all'html.. se vuoi ripetere l'html devi farlo tramite un ciclo prima in una variabile a parte
+          // var html = "";
+          // for(quante volte voglio) {
+          //   html += "<li>stella</li>";
+          // }
+          // oggetto.stelle = html;
 
 
           // USA CICLO FOR..IN X CICLARE gli OGGETTI (pensato apposta)
