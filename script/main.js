@@ -37,7 +37,7 @@ $(document).ready(function() {
       // 1.title 2.original_title 3.original_language 4.vote_average
 
       success: function(data){
-        // console.log(data)
+      console.log(data)
 
         // Handlebars per stampare i risultati ritornati dall API
         // HB API
@@ -81,9 +81,12 @@ $(document).ready(function() {
 
         var lingua = oggetto.original_language;
         console.log(lingua);
-        // oggetto2.lingua = ;
-        if (lingua = en) {
+
+        if (lingua == oggetto.original_language:"en") {
           console.log("è inglese!");
+        }
+        else {
+          console.log("è un altra lingua!");
         }
 
 
