@@ -19,6 +19,10 @@ body {
 /* bottone vai */
 .bottoneVai {}
 
+.flag {
+  width: 2%;
+}
+
 /* DEBUG:  */
 div {
   border: solid 1px;

@@ -30,11 +30,12 @@
   <script id="entry-template" type="text/x-handlebars-template">
     <div>
       <ul>
+        <li class="locandina1"><img src="{{{poster_path}}}"></li>
         <li class="titolo">Titolo: {{title}}</li>
         <li class="titoloOriginale">Titolo Originale: {{original_title}}</li>
-        <li class="lingua">Lingua: {{original_language}} {{{original_language}}}</li>
+        <li class="lingua">Lingua: {{{original_language}}}</li>
         <li class="voto">Voto: {{vote_average}}</li>
-        <li class="stelle">Stelle: {{{stelle}}}</li>
+        <li class="stelle">Stelle: {{{stars}}}</li>
       </ul>
     </div>
   </script>

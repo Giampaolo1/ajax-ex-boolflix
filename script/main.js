@@ -61,36 +61,37 @@ $(document).ready(function() {
             }
           }
 
-          // aggiungo le stelline all' oggetto e alla classe .stelle
-          oggetto.stelle = rating + " " + stelleFigure;
+          // aggiungo le stelline all' oggetto
+          oggetto.stars = rating + " " + stelleFigure;
 
           // e stampo l oggetto sulla classe stelle
+
+          // IDEA: ---------------------------------------------
+          // Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente,
+
+          var lingua = oggetto.original_language;
+
+          if (lingua == "en") {
+            oggetto.original_language = lingua + " " + '<img class="flag" src="img/en.png">';
+          }
+          else if (lingua == "it") {
+            oggetto.original_language = lingua + " " + '<img class="flag" src="img/it.png">';
+          }
+          else {
+          }
+
+          // IDEA: -----------------------------
+
+          var locandina = oggetto.poster_path;
+          oggetto.poster_path = "https://image.tmdb.org/t/p/w185" + locandina;
+
           // HB API
           var html = template(oggetto);
           // stampa HB API
           $('.container').append(html);
 
+
         }
-
-        // IDEA: ---------------------------------------------
-        // Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente,
-
-        // if (original_language = en) {
-        //   $('.lingua').append(img/en.png);
-        // }
-
-        var lingua = oggetto.original_language;
-        console.log(lingua);
-
-        if (lingua == oggetto.original_language:"en") {
-          console.log("è inglese!");
-        }
-        else {
-          console.log("è un altra lingua!");
-        }
-
-
-
 
         // ripulisco la barra ricerca x una nuova ricerca
         $(".barraRicerca").val("");
@@ -102,7 +103,7 @@ $(document).ready(function() {
 
     })
 
-    // ---------------seconda chiamata ajax------------------------
+    // ---------------seconda chiamata ajax TV SERIES------------------------
 
 
   // fine fx click
