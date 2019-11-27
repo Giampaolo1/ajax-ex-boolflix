@@ -62,7 +62,7 @@ $(document).ready(function() {
           }
 
           // aggiungo le stelline all' oggetto
-          oggetto.stars = rating + " " + stelleFigure;
+          oggetto.stars = stelleFigure;
 
           // e stampo l oggetto sulla classe stelle
 
@@ -72,18 +72,18 @@ $(document).ready(function() {
           var lingua = oggetto.original_language;
 
           if (lingua == "en") {
-            oggetto.original_language = lingua + " " + '<img class="flag" src="img/en.png">';
+            oggetto.original_language = '<img class="flag" src="img/en.png">';
           }
           else if (lingua == "it") {
-            oggetto.original_language = lingua + " " + '<img class="flag" src="img/it.png">';
+            oggetto.original_language = '<img class="flag" src="img/it.png">';
           }
           else {
           }
 
           // IDEA: -----------------------------
 
-          var locandina = oggetto.poster_path;
-          oggetto.poster_path = "https://image.tmdb.org/t/p/w185" + locandina;
+          var poster = oggetto.poster_path;
+          oggetto.poster_path = "https://image.tmdb.org/t/p/w185" + poster;
 
           // HB API
           var html = template(oggetto);
