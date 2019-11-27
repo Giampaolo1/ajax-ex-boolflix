@@ -1,30 +1,21 @@
-// Milestone 1:
-// Creare un layout base con una searchbar (una input e un button) in cui possiamo scrivere completamente o parzialmente il nome di un film. Possiamo, cliccando il  bottone, cercare sull’API tutti i film che contengono ciò che ha scritto l’utente.
-// Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni film trovato:
-// Titolo
-// Titolo Originale
-// Lingua
-// Voto
 
 $(document).ready(function() {
 
   // l utente digiterà qualcosa sulla searchbar
 
-  // Ci salviano il valore dell input inserito dall utente
+  // L' utente digiterà qualcosa nella searchbar (input)
+  // Evento di click
   $(".bottoneVai").click(function(){
 
-    // ripulisco la pagina
+    // ripulisco la pagina ad ogni nuova ricerca
     $(".container").html("");
 
+    // Ci salviano il valore dell input inserito dall utente
     var ricercaUtente = $(".barraRicerca").val();
     // console.log(ricercaUtente);
 
-    // al click del bottone parte la chiamata ajax x la ricerca
-
-// API KEY: 68d4888fdac250927f94dcdbf7553096
-
-    var ricerca = $(".barraRicerca").val();
-
+    // al click del bottone parte la chiamata ajax x la ricerca (quindi ajax dentro evento di click)
+    // API KEY: 68d4888fdac250927f94dcdbf7553096
 
     $.ajax({
       // metto parte dell url
@@ -36,46 +27,66 @@ $(document).ready(function() {
 
       data: {
         api_key: "68d4888fdac250927f94dcdbf7553096",
-        query: ricerca
+        query: ricercaUtente,
+        language: 'it-IT'
       },
 
       // Vogliamo dopo la risposta dell’API
       // visualizzare a schermo i seguenti valori per ogni film trovato.
-
-      // results: Array
+      // results: Array:
       // 1.title 2.original_title 3.original_language 4.vote_average
 
       success: function(data){
         // console.log(data)
 
+        // Handlebars per stampare i risultati ritornati dall API
         // HB API
         var source = $("#entry-template").html();
         var template = Handlebars.compile(source);
 
         for (var i = 0; i < data.results.length; i++) {
+          // trasformo i risultati dell array dell api (data.results) in una var che chiamo oggetto
           var oggetto = data.results[i];
-          oggetto.stelle = (Math.round(oggetto.vote_average/2)) + " " + htmlStars;
-          // "<ul>
-          //     <li>stella</li>
-          //   </ul>";
+
+          // trasformo il rating (vote_average) in un numero di stelle da 1 a 5
+          var rating = (Math.round(oggetto.vote_average/2));
+          // e ciclo per calcolare il numero di stelleFigure
+          var stelleFigure = "";
+          for (var x = 1; x <= 5 ; x++) {
+            if (x <= rating) {
+              stelleFigure += '<i class= "fas fa-star"></i>';
+            }
+            else {
+              stelleFigure += '<i class= "far fa-star"></i>';
+            }
+          }
+
+          // aggiungo le stelline all' oggetto e alla classe .stelle
+          oggetto.stelle = rating + " " + stelleFigure;
+
+          // e stampo l oggetto sulla classe stelle
           // HB API
           var html = template(oggetto);
-
-          // HB API
+          // stampa HB API
           $('.container').append(html);
 
         }
 
-        var stelline = (Math.round(oggetto.vote_average/2));
-        var htmlStars = "";
-        for (var x = 1; x <= 5 ; x++) {
-          if (x <= stelline) {
-            htmlStars = htmlStars + '<i class= "fas fa-star"></i>';
-          }
-          else {
-            htmlStars = htmlStars + '<i class= "far fa-star"></i>';
-          }
+        // IDEA: ---------------------------------------------
+        // Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente,
+
+        // if (original_language = en) {
+        //   $('.lingua').append(img/en.png);
+        // }
+
+        var lingua = oggetto.original_language;
+        console.log(lingua);
+        // oggetto2.lingua = ;
+        if (lingua = en) {
+          console.log("è inglese!");
         }
+
+
 
 
         // ripulisco la barra ricerca x una nuova ricerca
@@ -88,15 +99,16 @@ $(document).ready(function() {
 
     })
 
+    // ---------------seconda chiamata ajax------------------------
+
+
+  // fine fx click
   });
 
+// fine doc ready
 });
 
-// Milestone 2:
-// Trasformiamo il numero da 1 a 10 decimale in un numero intero da 1 a 5, così da permetterci di stampare
-// a schermo un numero di stelle piene che vanno da 1 a 5, lasciando le restanti vuote
-// (troviamo le icone in FontAwesome).
-// Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezze piene.
+// CONSEGNE-----------------------------------------------------------------------
 
 // Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente,
 // gestendo il caso in cui non abbiamo la bandiera della nazione ritornata dall’API
