@@ -37,7 +37,7 @@ $(document).ready(function() {
       // 1.title 2.original_title 3.original_language 4.vote_average
 
       success: function(data){
-      console.log(data)
+      // console.log(data)
 
         // Handlebars per stampare i risultati ritornati dall API
         // HB API
@@ -80,10 +80,16 @@ $(document).ready(function() {
           else {
           }
 
-          // IDEA: -----------------------------
+          // Aggingo il poster: -----------------------------
 
           var poster = oggetto.poster_path;
           oggetto.poster_path = "https://image.tmdb.org/t/p/w185" + poster;
+          console.log(poster);
+
+          if (poster == null) {
+            oggetto.poster_path = '<img class= "noposter" src="img/noposter.png">';
+          }
+
 
           // HB API
           var html = template(oggetto);

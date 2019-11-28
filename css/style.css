@@ -11,6 +11,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* body */
+/* body {
+  background-color: lightgrey;
+} */
+
+/* DEBUG:  */
+div {
+  border: solid 1px;
+}
+
+
+/* BARRA SOPRA: -------------------------------------------- */
+
 /* searchbar principale */
 .barraRicerca {
   border: solid 1px;
@@ -19,16 +32,30 @@ body {
 /* bottone vai */
 .bottoneVai {}
 
+/* navigation */
+
+.navigation {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+}
+
+
+/* MAIN: -------------------------------------------- */
+
+/* bandiere */
 .flag {
   width: 2%;
 }
 
-/* DEBUG:  */
-div {
-  border: solid 1px;
-  margin: 10px;
+/* .stelle {
+  color: yellow;
+} */
+
+.contenitoreFilm {
+  display: flex;
 }
 
-/* .star1 {
-  background-color: yellow;
-} */
+ul {
+  list-style-type: none;
+}

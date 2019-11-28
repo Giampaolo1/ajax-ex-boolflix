@@ -18,8 +18,10 @@
   </head>
   <body>
   <!-- inizio header  -->
-  <input type="text" placeholder="Search" class="barraRicerca">
-  <button type="button" name="button" class="bottoneVai">Vai</button>
+  <div class="navigation">
+    <input type="text" placeholder="Search" class="barraRicerca">
+    <button type="button" name="button" class="bottoneVai">Vai</button>
+  </div>
 
   <div class="container">
   </div>
@@ -28,16 +30,22 @@
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
   <script id="entry-template" type="text/x-handlebars-template">
-    <div>
-      <ul>
-        <li class="locandina"><img src="{{{poster_path}}}"></li>
-        <li class="titolo">Titolo: {{title}}</li>
-        <li class="titoloOriginale">Titolo Originale: {{original_title}}</li>
-        <li class="lingua">Lingua: {{{original_language}}}</li>
-        <li class="voto">Voto: {{vote_average}}</li>
-        <li class="stelle">Stelle: {{{stars}}}</li>
-      </ul>
+    <div class="contenitoreFilm">
+      <div class="poster">
+        <img src="{{{poster_path}}}">
+      </div>
+      <div class="dettagliFilm">
+        <ul>
+          <li class="titolo">Titolo: {{title}}</li>
+          <li class="titoloOriginale">Titolo Originale: {{original_title}}</li>
+          <li class="lingua">Lingua: {{{original_language}}}</li>
+          <li class="voto">Voto: {{vote_average}}</li>
+          <li class="stelle">Stelle: {{{stars}}}</li>
+        </ul>
+      </div>
     </div>
+
+
   </script>
 
   <!-- <script id="entry-template2" type="text/x-handlebars-template">
