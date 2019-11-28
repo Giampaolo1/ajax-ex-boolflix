@@ -33,7 +33,7 @@ background-color: lightgrey;
 
 /* bottone vai */
 .bottoneVai {
-  width: 100px;
+  width: 120px;
   height: 35px;
   border: solid red;
   font-weight: bold;
@@ -87,7 +87,9 @@ background-color: lightgrey;
 .trama {
   font-size: 9px;
   font-weight: normal;
-  overflow-y: scroll;
+  /* controlli per testo lungo */
+  max-height: 120px;
+  overflow-y: auto;
 }
 
 
@@ -96,12 +98,11 @@ background-color: lightgrey;
 .poster:hover {
   opacity: 0.1;
   cursor: pointer;
-  z-index: 0;
 }
 
-.poster:hover .trama{
-  z-index: 10;
-}
+/* .poster:hover .dettaglifilm{
+z-index: 10;
+} */
 
 
 /* dettagli interni singoli film */
