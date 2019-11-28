@@ -26,18 +26,27 @@ background-color: lightgrey;
 
 /* searchbar principale */
 .barraRicerca {
-  border: solid 1px;
+  border: solid red;
+  height: 35px;
 }
 
 /* bottone vai */
-.bottoneVai {}
+.bottoneVai {
+  width: 100px;
+  height: 35px;
+  border: solid red;
+  font-weight: bold;
+  font-size: 15px;
+}
 
 /* navigation */
 
 .navigation {
   width: 100%;
-  height: 60px;
   background-color: grey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
@@ -57,7 +66,9 @@ ul {
 }
 
 .noposter {
-  width: 60%;
+  width: 185px;
+  height: 255px;
+  opacity: 0.5;
 }
 
 /* .poster:hover {
@@ -77,11 +88,12 @@ ul {
   border: solid yellow;
   display: flex;
   width: 30%;
-  margin: 1%;
+  margin: 1.5%;
 }
 
 .container {
   border: solid red;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
