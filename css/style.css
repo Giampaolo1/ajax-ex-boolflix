@@ -45,17 +45,30 @@ div {
 
 /* bandiere */
 .flag {
-  width: 2%;
+  width: 3%;
 }
 
 /* .stelle {
   color: yellow;
 } */
 
+ul {
+  list-style-type: none;
+}
+
 .contenitoreFilm {
   display: flex;
 }
 
-ul {
-  list-style-type: none;
-}
+/* .dettagliFilm {
+  display: none;
+} */
+
+/* .poster:hover {
+  opacity: 0.2; */
+  cursor: pointer;
+}  */
+
+/* .poster:hover .dettagliFilm {
+  display: block;
+} */

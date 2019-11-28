@@ -83,10 +83,12 @@ $(document).ready(function() {
           // Aggingo il poster: -----------------------------
 
           var poster = oggetto.poster_path;
-          oggetto.poster_path = "https://image.tmdb.org/t/p/w185" + poster;
+          oggetto.poster_path = '<img src="https://image.tmdb.org/t/p/w185' + poster + '">';
           console.log(poster);
 
-          if (poster == null) {
+          // Inserisco una condizione in caso di ASSENZA POSTER
+
+          if (!poster) {
             oggetto.poster_path = '<img class= "noposter" src="img/noposter.png">';
           }
 
