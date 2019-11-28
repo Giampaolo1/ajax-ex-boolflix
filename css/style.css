@@ -13,7 +13,7 @@ body {
 
 /* body */
 body {
-background-color: lightgrey;
+background-color: #434343;
 }
 
 /* DEBUG:  */
@@ -45,7 +45,7 @@ background-color: lightgrey;
 
 .navigation {
   width: 100%;
-  background-color: grey;
+  background-color: black;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -73,20 +73,22 @@ background-color: lightgrey;
 
 .poster {
   position: absolute;
-  height: 280px;
   width: 185px;
+  height: 280px;
 }
 
 .dettagliFilm {
   font-size: 14px;
-  height: 280px;
   width: 185px;
-  border: solid 1px black;
+  height: 280px;
+  border: solid 1px white;
+  padding-left: 3px;
 }
 
 .trama {
   font-size: 9px;
   font-weight: normal;
+  color: white;
   /* controlli per testo lungo */
   max-height: 120px;
   overflow-y: auto;
@@ -108,6 +110,11 @@ z-index: 10;
 /* dettagli interni singoli film */
 
 /* bandiere */
+
+.infoInside{
+  color: white;
+}
+
 .flag {
   width: 10%;
 }
@@ -126,9 +133,11 @@ ul {
   width: 185px;
   height: 280px;
   opacity: 0.2;
+  border: solid 1px white;
 }
 
 .yesposter {
   width: 185px;
   height: 280px;
+  border: solid 1px white;
 }
