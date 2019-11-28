@@ -12,14 +12,14 @@ body {
 }
 
 /* body */
-/* body {
-  background-color: lightgrey;
-} */
+body {
+background-color: lightgrey;
+}
 
 /* DEBUG:  */
-div {
+/* div {
   border: solid 1px;
-}
+} */
 
 
 /* BARRA SOPRA: -------------------------------------------- */
@@ -56,19 +56,32 @@ ul {
   list-style-type: none;
 }
 
-.contenitoreFilm {
-  display: flex;
+.noposter {
+  width: 60%;
 }
+
+/* .poster:hover {
+  opacity: 0.2;
+  cursor: pointer;
+}  */
 
 /* .dettagliFilm {
   display: none;
 } */
 
-/* .poster:hover {
-  opacity: 0.2; */
-  cursor: pointer;
-}  */
-
 /* .poster:hover .dettagliFilm {
   display: block;
 } */
+
+.contenitoreFilm {
+  border: solid yellow;
+  display: flex;
+  width: 30%;
+  margin: 1%;
+}
+
+.container {
+  border: solid red;
+  display: flex;
+  flex-wrap: wrap;
+}
