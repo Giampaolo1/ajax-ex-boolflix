@@ -39,12 +39,15 @@
       </div>
       <div class="dettagliFilm">
         <ul>
-          <li class="titolo">Titolo: {{title}}</li>
-          <li class="titoloOriginale">Titolo Originale: {{original_title}}</li>
-          <li class="lingua">Lingua: {{{original_language}}}</li>
-          <li class="voto">Voto: {{vote_average}}</li>
-          <li class="stelle">Stelle: {{{stars}}}</li>
-        </ul>
+          <li class="infoInside"><b>Titolo:</b> {{title}}</li>
+          <li class="infoInside"><b>Titolo Originale:</b> {{original_title}}</li>
+          <li class="infoInside"><b>Lingua:</b> {{{original_language}}}</li>
+          <li class="infoInside"><b>Voto:</b> {{vote_average}}</li>
+          <li class="stelle">{{{stars}}}</li>
+          </ul>
+          <div class="trama">
+          {{overview}}
+          </div>
       </div>
     </div>
   </script>

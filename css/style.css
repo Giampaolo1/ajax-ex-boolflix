@@ -28,6 +28,7 @@ background-color: lightgrey;
 .barraRicerca {
   border: solid red;
   height: 35px;
+  font-size: 16px;
 }
 
 /* bottone vai */
@@ -37,6 +38,7 @@ background-color: lightgrey;
   border: solid red;
   font-weight: bold;
   font-size: 15px;
+  /* omb bottone */
 }
 
 /* navigation */
@@ -52,48 +54,81 @@ background-color: lightgrey;
 
 /* MAIN: -------------------------------------------- */
 
-/* bandiere */
-.flag {
-  width: 3%;
-}
-
-/* .stelle {
-  color: yellow;
-} */
-
-ul {
-  list-style-type: none;
-}
-
-.noposter {
-  width: 185px;
-  height: 255px;
-  opacity: 0.5;
-}
-
-/* .poster:hover {
-  opacity: 0.2;
-  cursor: pointer;
-}  */
-
-/* .dettagliFilm {
-  display: none;
-} */
-
-/* .poster:hover .dettagliFilm {
-  display: block;
-} */
-
-.contenitoreFilm {
-  border: solid yellow;
-  display: flex;
-  width: 30%;
-  margin: 1.5%;
-}
-
 .container {
   border: solid red;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+/* Singoli film */
+
+.contenitoreFilm {
+  display: flex;
+  width: 185px;
+  height: 280px;
+  margin: 1.5%;
+  position: relative;
+}
+
+.poster {
+  position: absolute;
+  height: 280px;
+  width: 185px;
+}
+
+.dettagliFilm {
+  /* font-weight: bold; */
+  font-size: 14px;
+  height: 280px;
+  width: 185px;
+  border: solid 1px black;
+}
+
+.trama {
+  font-size: 9px;
+  font-weight: normal;
+  overflow-y: scroll;
+}
+
+
+/* HOVER------------- */
+
+.poster:hover {
+  opacity: 0.1;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.poster:hover .trama{
+  z-index: 10;
+}
+
+
+/* dettagli interni singoli film */
+
+/* bandiere */
+.flag {
+  width: 10%;
+}
+
+.stelle {
+  color: yellow;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Formattazione immagini */
+
+.noposter {
+  width: 185px;
+  height: 280px;
+  opacity: 0.2;
+}
+
+.yesposter {
+  width: 185px;
+  height: 280px;
 }
