@@ -97,9 +97,12 @@ background-color: #434343;
 
 /* HOVER------------- */
 
-.poster:hover {
-  opacity: 0.1;
-  cursor: pointer;
+.contenitoreFilm:hover > .poster {
+  z-index: 1;
+  opacity: 0.3;
+}
+.contenitoreFilm:hover > .dettagliFilm {
+  z-index: 100;
 }
 
 /* .poster:hover .dettaglifilm{
