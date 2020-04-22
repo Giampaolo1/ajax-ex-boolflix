@@ -15,4 +15,4 @@ Slider creato con jquery UI
 
 Task Assigned: https://docs.google.com/document/d/1-kUoIxQaLIKUPa_JSH-MhlxoLL-RHmHr5Dc1eU8JnPA/edit
 
-https://user-images.githubusercontent.com/55139220/71820559-c0b89400-308f-11ea-84bd-611c4e1a42cf.gif
+Preview: https://user-images.githubusercontent.com/55139220/71820559-c0b89400-308f-11ea-84bd-611c4e1a42cf.gif
